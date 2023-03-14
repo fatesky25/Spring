@@ -12,9 +12,8 @@ public class PointcutCommon {
 	}
 	
 	@Pointcut("execution(* com.globalin.biz..*Impl.get*(..))")
-    public void getPointcut() {
+	public void getPointcut() {
 		
 	}
-	
 	
 }

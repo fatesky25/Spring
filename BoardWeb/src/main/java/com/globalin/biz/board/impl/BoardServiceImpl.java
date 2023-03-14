@@ -12,34 +12,34 @@ import com.globalin.biz.common.LogAdvice;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
-
+	
 	@Autowired
 	private BoardDAOSpring boardDAO;
-	//private BoardDAO boardDAO;
-	//private LogAdvice log;
-	//private Log4jAdvice log;
+  //private BoardDAO boardDAO;
+  //private LogAdvice log;
+  //private Log4jAdvice log;
+	
 	/*
 	public BoardServiceImpl() {
-	  log = new Log4jAdvice();
+		//log = new LogAdvice();
+		//log = new Log4jAdvice();
 	}
 	*/
-	
 	@Override
 	public void insertBoard(BoardVO vo) {
 		//log.printLog();
 		//log.printLogging();
 		/*
 		if(vo.getSeq() == 0) {
-			throw new IllegalArgumentException("0π¯ ±€¿∫ µÓ∑œ«“ ºˆ æ¯Ω¿¥œ¥Ÿ.");
+			throw new IllegalArgumentException("0Î≤à Í∏ÄÏùÄ Îì±Î°ùÌï† Ïàò ÏóÜÏäµÎãàÎã§.");
 		}
-	*/
-		boardDAO.insertBoard(vo);// ±€ µÓ∑œ º∫∞¯
-		boardDAO.insertBoard(vo);// Exception πﬂª˝
+		*/
+		boardDAO.insertBoard(vo); // Í∏Ä Îì±Î°ù ÏÑ±Í≥µ
+		boardDAO.insertBoard(vo); // Exception Î∞úÏÉù
 	}
 
 	@Override
 	public void updateBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
 		//log.printLog();
 		//log.printLogging();
 		boardDAO.updateBoard(vo);
@@ -47,7 +47,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void deleteBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
 		//log.printLog();
 		//log.printLogging();
 		boardDAO.deleteBoard(vo);
@@ -55,7 +54,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardVO getBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
 		//log.printLog();
 		//log.printLogging();
 		return boardDAO.getBoard(vo);
@@ -63,7 +61,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardVO> getBoardList() {
-		// TODO Auto-generated method stub
 		//log.printLog();
 		//log.printLogging();
 		return boardDAO.getBoardList();

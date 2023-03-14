@@ -3,7 +3,7 @@ package com.globalin.biz.common;
 public class Log4jAdvice {
 
 	public void printLogging() {
-		System.out.println("[°øÅë·Î±× Log4j] ºñÁî´Ï½º·ÎÁ÷ ¼öÇà Àü µ¿ÀÛ....");
+		System.out.println("[ê³µí†µë¡œê·¸ Log4j] ë¹„ì¦ˆë‹ˆìŠ¤ë¡œì§ ìˆ˜í–‰ ì „ ë™ì‘....");
 	}
 	
 }

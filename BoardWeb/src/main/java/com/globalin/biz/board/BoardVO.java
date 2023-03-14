@@ -2,15 +2,15 @@ package com.globalin.biz.board;
 
 import java.sql.Date;
 
-// VO(Value Object)
 public class BoardVO {
-
+	
 	private int seq;
 	private String title;
 	private String writer;
 	private String content;
 	private Date regDate;
 	private int cnt;
+	
 	public int getSeq() {
 		return seq;
 	}
@@ -51,9 +51,7 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		
-		return "BoardVO [seq="+seq+", title="+title+",writer="+writer+
-				", content="+content+", regDate="+regDate+", cnt="+cnt+"]";
+		return "BoardVO [seq="+seq+", title="+title+", writer="+writer+", content="+content+", regDate="+regDate+", cnt="+cnt+"]";
 	}
-	
 	
 }

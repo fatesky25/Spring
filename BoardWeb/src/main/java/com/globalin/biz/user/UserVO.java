@@ -1,7 +1,7 @@
 package com.globalin.biz.user;
 
 public class UserVO {
-
+	
 	private String id;
 	private String password;
 	private String name;
@@ -34,11 +34,6 @@ public class UserVO {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "UserVO [id="+id+", password="+password
-				+", name="+name+", role="+role+"]";
+		return "UserVO [id="+id+", password="+password+", name="+name+", role="+role+"]";
 	}
-	
-	
-	
 }

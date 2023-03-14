@@ -7,16 +7,17 @@ public class TVUser {
 
 	public static void main(String[] args) {
 		
-		
-		
 		/*
 		BeanFactory factory = new BeanFactory();
-		//TV tv = new LgTV();
-		TV tv =(TV)factory.getBean("samsung");
+	  	//TV tv = new LgTV();
+		TV tv = (TV)factory.getBean("Lg");
 		tv.powerOn();
 		tv.volumeUp();
 		tv.volumeDown();
 		tv.powerOff();
+		*/
+		
+		/*
 		LgTV tv = new LgTV();
 		tv.trunOn();
 		tv.soundUp();
@@ -24,34 +25,38 @@ public class TVUser {
 		tv.trunOff();
 		*/
 		
-		// 1. Spring ÄÁÅ×ÀÌ³Ê¸¦ ±¸µ¿ÇÑ´Ù.
 		
-		/*  GenericXmlApplicationContext Å¬·¡½º
-		 *   - ÆÄÀÏ ½Ã½ºÅÛÀÌ³ª Å¬·¡½º°æ·Î¿¡ ÀÖ´Â XML ¼³Á¤ÆÄÀÏÀ» ·ÎµùÇÏ¿© ±¸µ¿ÇÏ´Â ÄÁÅ×ÀÌ³ÊÀÓ
-		 *   
-		 *   XmlWebApplicationContext Å¬·¡½º
-		 *   - À¥ ±â¹İÀÇ ½ºÇÁ¸µ ¾îÇÃ¸®ÄÉÀÌ¼ÇÀ» °³¹ßÇÒ¶§ »ç¿ëÇÏ´Â ÄÁÅ×ÀÌ³ÊÀÓ
+		
+		// 1. Spring ì»¨í…Œì´ë„ˆë¥¼ êµ¬ë™
+		
+		/*
+		 *  GenericXmlApplicationContext í´ë˜ìŠ¤
+		 *   - íŒŒì¼ ì‹œìŠ¤í…œì´ë‚˜ í´ë˜ìŠ¤ê²½ë¡œì— ìˆëŠ” XML ì„¤ì • íŒŒì¼ì„ ë¡œë”©í•˜ì—¬ êµ¬ë™í•˜ëŠ” ì»¨í…Œì´ë„ˆ
+		 *  
+		 *  XmlWebApplicationContext í´ë˜ìŠ¤
+		 *   - ì›¹ê¸°ë°˜ì˜ ìŠ¤í”„ë§ ì–´í”Œë¦¬ì¼€ì´ì…˜ì„ ê°œë°œí•  ë•Œ ì‚¬ìš©í•˜ëŠ” ì»¨í…Œì´ë„ˆ
 		 */
 		
-		AbstractApplicationContext factory = 
-				new GenericXmlApplicationContext("applicationContext.xml");
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
 		
-		// 2. Spring ÄÁÅ×ÀÌ³Ê·Î ºÎÅÍ ÇÊ¿äÇÑ °´Ã¼¸¦ ¿äÃ»(lookup)ÇÑ´Ù.
-		TV tv =(TV)factory.getBean("tv");
-		//TV tv1 =(TV)factory.getBean("tv");
-		//TV tv2 =(TV)factory.getBean("tv");
-		//TV tv3 =(TV)factory.getBean("tv");
+		
+		// 2. Spring ì»¨í…Œì´ë„ˆë¡œë¶€í„° í•„ìš”í•œ ê°ì²´ë¥¼ ìš”ì²­í•œë‹¤.(look up)
+		TV tv = (TV)factory.getBean("tv");
+	  //TV tv1 = (TV)factory.getBean("tv");
+      //TV tv2 = (TV)factory.getBean("tv");
+	  //TV tv3 = (TV)factory.getBean("tv");
+		
 		
 		tv.powerOn();
 		tv.volumeUp();
 		tv.volumeDown();
 		tv.powerOff();
 		
-		
-		// 3. Spring ÄÁÅ×ÀÌ³Ê¸¦ Á¾·áÇÑ´Ù.
+		// 3. Spring ì»¨í…Œì´ë„ˆë¥¼ ì¢…ë£Œ
 		factory.close();
 		
-
+		
+		
 	}
 
 }

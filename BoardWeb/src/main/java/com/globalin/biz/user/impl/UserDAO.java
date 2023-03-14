@@ -1,8 +1,6 @@
 package com.globalin.biz.user.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 import org.springframework.stereotype.Repository;
 
@@ -12,44 +10,42 @@ import com.globalin.biz.user.UserVO;
 @Repository("userDAO")
 public class UserDAO {
 
-	// JDBC °ü·Ã º¯¼ö ¼±¾ð
-	private Connection  conn = null;
-	private PreparedStatement	stmt =null;
+	// JDBC ê´€ë ¨ ë³€ìˆ˜ ì„ ì–¸
+	private Connection conn = null;
+	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
-	// SQL ¸í·É¾î
-	 private final String USER_GET="select * from users where id=? and password=?";
+	// SQL ëª…ë ¹ì–´
+	private final String USER_GET="select * from users where id=? and password=?";
 	
-	
-	// CRUD ±â´ÉÀÇ ¸Þ¼Òµå ±¸Çö
+	// CRUD ê¸°ëŠ¥ì˜ ë©”ì†Œë“œ êµ¬í˜„
 	public UserVO getUser(UserVO vo){
 		
 		UserVO user = null;
-		 
 		try {
-		System.out.println("----  >  JDBC·Î getUser() ±â´É Ã³¸®....");
-		conn = JDBCUtil.getConnection();
-		stmt = conn.prepareStatement(USER_GET);
-		stmt.setString(1, vo.getId());
-		stmt.setString(2, vo.getPassword());
+			System.out.println("----> JDBCë¡œ getUser() ê¸°ëŠ¥ ì²˜ë¦¬....");
+			conn = JDBCUtil.getConnection();
+			pstmt = conn.prepareStatement(USER_GET);
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPassword());
+			rs = pstmt.executeQuery();
 			
-		rs = stmt.executeQuery();
-		if(rs.next()) {
-			
-			user = new UserVO();
-			user.setId(rs.getString("id"));
-			user.setPassword(rs.getString("password"));
-			user.setName(rs.getString("name"));
-			user.setRole(rs.getString("role"));
-		}
+			if(rs.next()) {
+				user = new UserVO();
+				user.setId(rs.getString("id"));
+				user.setPassword(rs.getString("password"));
+				user.setName(rs.getString("name"));
+				user.setRole(rs.getString("role"));
+				
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			JDBCUtil.close(rs, stmt, conn);
+			JDBCUtil.close(rs, pstmt, conn);
 		}
+		
 		
 		return user;
 	}
-
 }

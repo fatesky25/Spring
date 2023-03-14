@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Aspect
 public class AfterAdvice {
 
-	
 	@Pointcut("execution(* com.globalin.biz..*Impl.*(..))")
 	public void allPointcut() {
 		
@@ -17,8 +16,6 @@ public class AfterAdvice {
 	
 	@After("allPointcut()")
 	public void finallyLog() {
-		System.out.println("[»çÈÄ Ã³¸®] ºñÁî´Ï½º ·ÎÁ÷ ¼öÇà ÈÄ ¹«Á¶°Ç µ¿ÀÛ....");
+		System.out.println("[ì‚¬í›„ ì²˜ë¦¬] ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§ ìˆ˜í–‰ í›„ ë¬´ì¡°ê±´ ë™ì‘....");
 	}
-	
-	
 }

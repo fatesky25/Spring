@@ -1,11 +1,9 @@
 package com.globalin.biz.user;
 
-
-
 public interface UserService {
 
-	//crud ±â´ÉÀÇ ¸Ş¼Òµå ±¸Çö
-	// È¸¿øµî·Ï
+	// CRUD ê¸°ëŠ¥ì˜ ë©”ì†Œë“œ êµ¬í˜„
+	// íšŒì›ë“±ë¡
 	public UserVO getUser(UserVO vo);
 	
 }

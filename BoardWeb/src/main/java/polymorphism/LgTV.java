@@ -7,43 +7,38 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("tv")
-public class LgTV implements TV{
-    
- // @Autowired : º¯¼ö À§¿¡ ¼³Á¤ÇÏ¿© ÇØ´çÇÏ´Â Å¸ÀÔ °´Ã¼¸¦ Ã£¾Æ¼­ ÀÚµ¿À¸·Î ÇÒ´çÇÏ´Â ±â´É
- //	 @Qualifier("apple") : °´Ã¼°¡ ¿©·¯°³ÀÏ °æ¿ì Æ¯Á¤ °´Ã¼ÀÇ ÀÌ¸§À» ÀÌ¿ëÇÏ¿© ÀÇÁ¸¼ºÀ» ÁÖÀÔÇÏ´Â ±â´É
-    @Autowired
-//    @Qualifier("apple")
-	//@Resource(name = "sony")// name ¼Ó¼ºÀ» ÀÌ¿ëÇÏ¿© °´Ã¼¸¦ Ã£¾Æ¼­ ÀÚµ¿À¸·Î ÇÒ´çÇÔ
-	private Speaker speaker;
+public class LgTV implements TV {
+	
+ // @Autowired : ë³€ìˆ˜ ìœ„ì— ì„¤ì •í•˜ì—¬ í•´ë‹¹í•˜ëŠ” íƒ€ì… ê°ì²´ë¥¼ ì°¾ì•„ì„œ ìë™ìœ¼ë¡œ í• ë‹¹í•˜ëŠ” ê¸°ëŠ¥
+ // @Qualifier("apple") : ê°ì²´ê°€ ì—¬ëŸ¬ê°œì¼ ê²½ìš° íŠ¹ì • ê°ì²´ì˜ ì´ë¦„ì„ ì´ìš©í•˜ì—¬ ì˜ì¡´ì„±ì„ ì£¼ì…í•˜ëŠ” ê¸°ëŠ¥ 
+ 	@Autowired			
+ //	@Qualifier("apple")
+ //	@Resource(name = "apple") // name ì†ì„±ì„ ì´ìš©í•˜ì—¬ ê°ì²´ë¥¼ ì°¾ì•„ì„œ ìë™ìœ¼ë¡œ í• ë‹¹í•¨ 
+	public Speaker speaker;	// ë©¤ë²„ë³€ìˆ˜ ì¶”ê°€
 	
 	public LgTV() {
-	
-		System.out.println("====> Lg TV  °´Ã¼ »ı¼º...");
+		System.out.println("====> Lg TV ê°ì²´ ìƒì„±...");
 	}
-	
+
 	@Override
 	public void powerOn() {
-		// TODO Auto-generated method stub
-		System.out.println("LgTV ----- Àü¿ø ÄÒ´Ù.");
+		System.out.println("LgTV ----- ì „ì› ì¼ ë‹¤.");
 	}
 
 	@Override
 	public void powerOff() {
-		// TODO Auto-generated method stub
-		System.out.println("LgTV ----- Àü¿ø ²ö´Ù.");
+		System.out.println("LgTV ----- ì „ì› ëˆë‹¤.");
 	}
 
 	@Override
 	public void volumeUp() {
-		// TODO Auto-generated method stub
-		//System.out.println("LgTV ----- ¼Ò¸® ¿Ã¸°´Ù.");
+	  //System.out.println("LgTV ----- ì†Œë¦¬ ì˜¬ë¦°ë‹¤.");
 		speaker.volumeUp();
 	}
 
 	@Override
 	public void volumeDown() {
-		// TODO Auto-generated method stub
-		//System.out.println("LgTV ----- ¼Ò¸® ³»¸°´Ù.");
+      //System.out.println("LgTV ----- ì†Œë¦¬ ë‚´ë¦°ë‹¤.");
 		speaker.volumeDown();
 	}
 }

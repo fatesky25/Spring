@@ -3,33 +3,31 @@ package com.globalin.biz.user;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-
-
 public class UserServiceClient {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		AbstractApplicationContext container = 
+		
+		AbstractApplicationContext container =
 				new GenericXmlApplicationContext("applicationContext.xml");
 		
+		UserService userService = (UserService)container.getBean("userService");
 		
-		UserService userService =(UserService)container.getBean("userService");
 		
-		
-		// ·Î±×ÀÎ ±â´É±¸Çö
+		// ë¡œê·¸ì¸ ê¸°ëŠ¥êµ¬í˜„
 		UserVO vo = new UserVO();
 		vo.setId("test");
 		vo.setPassword("test123");
 		
 		UserVO user = userService.getUser(vo);
 		
-		if(user != null) {
-			System.out.println(user.getName()+"´Ô ¹«Àğ°Ô È¯¿µÇÏ´Â ¹ÙÀÔ´Ï´Ù.");
+		if(user!=null) {
+			System.out.println(user.getName()+"ë‹˜ ë¬´ìŸˆê²Œ í™˜ì˜í•˜ëŠ” ë°”ì…ë‹ˆë‹¤.");
 		}else {
-			System.out.println("·Î±×ÀÎ ½ÇÆĞ !!! ..");
+			System.out.println("ë¡œê·¸ì¸ ì‹¤íŒ¨ !!! ..");
 		}
-		container.close();
 		
+		container.close();
+
 	}
 
 }

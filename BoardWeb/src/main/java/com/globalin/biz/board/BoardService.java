@@ -3,12 +3,11 @@ package com.globalin.biz.board;
 import java.util.List;
 
 public interface BoardService {
-
-	//CRUD ±â´ÉÀÇ ¸Ş¼Òµå ±¸Çö
+	
+	// CRUD ê¸°ëŠ¥ì˜ ë©”ì†Œë“œ êµ¬í˜„
 	void insertBoard(BoardVO vo);
 	void updateBoard(BoardVO vo);
 	void deleteBoard(BoardVO vo);
 	BoardVO getBoard(BoardVO vo);
 	List<BoardVO> getBoardList();
-	
 }

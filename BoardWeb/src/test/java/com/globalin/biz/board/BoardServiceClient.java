@@ -7,34 +7,32 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.globalin.biz.board.impl.BoardServiceImpl;
 
+
 public class BoardServiceClient {
 
 	public static void main(String[] args) {
-	
-		AbstractApplicationContext container = 
+		
+		AbstractApplicationContext container =
 				new GenericXmlApplicationContext("applicationContext.xml");
 		
-		
-		BoardService boardService =(BoardService)container.getBean("boardService");
-		//BoardServiceImpl boardService = new BoardServiceImpl();
-		// ±Û µî·Ï
+		BoardService boardService = (BoardService)container.getBean("boardService");
+		// BoardServiceImpl boardService = new BoardServiceImpl();
+		// ê¸€ ë“±ë¡
 		BoardVO vo = new BoardVO();
-		//vo.setSeq(100);
-		vo.setTitle("ÀÓ½Ã Á¦¸ñ");
-		vo.setWriter("È«±æµ¿");
-		vo.setContent("ÀÓ½Ã ³»¿ëµéÀÔ´Ï´Ù. ......");
+		//vo.setSeq(0);	// ì‹œí€€ìŠ¤ëŠ” 0ë²ˆ ê°’ì„ ê°€ì§ˆ ìˆ˜ ì—†ìŒ
+		vo.setTitle("ì„ì‹œ ì œëª©");
+		vo.setWriter("í™ê¸¸ë™");
+		vo.setContent("ì„ì‹œ ë‚´ìš©ë“¤ì…ë‹ˆë‹¤. ......");
 		//boardService.insertBoard(vo);
 		
-		// ±Û ¸ñ·Ï °Ë»ö
-		List<BoardVO> boardList = boardService.getBoardList();
+		// ê¸€ ëª©ë¡ ê²€ìƒ‰
+		List<BoardVO> boardList =boardService.getBoardList();
 		
 		for(BoardVO board : boardList) {
 			System.out.println("----> "+board.toString());
 		}
 		
 		container.close();
-		
-		
 	}
 
 }

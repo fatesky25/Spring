@@ -7,23 +7,21 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 
 @Service
-@Aspect //  Aspect = Pointcut  + Advice
+@Aspect	// Aspect = Pointcut + Advice
 public class LogAdvice {
-
+	
 	@Pointcut("execution(* com.globalin.biz..*Impl.*(..))")
 	public void allPointcut() {
 		
 	}
+	
 	@Pointcut("execution(* com.globalin.biz..*Impl.get*(..))")
-    public void getPointcut() {
+	public void getPointcut() {
 		
 	}
 	
-    
 	@Before("allPointcut()")
 	public void printLog(JoinPoint jp) {
-	
-		System.out.println("[°øÅë ·Î±×] ºñÁî´Ï½º ·ÎÁ÷ ¼öÇà Àü µ¿ÀÛÇÏ´Â ¸Ş¼Òµå...");
-		
+		System.out.println("[ê³µí†µ ë¡œê·¸] ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§ ìˆ˜í–‰ ì „ ë™ì‘í•˜ëŠ” ë©”ì†Œë“œ...");
 	}
 }

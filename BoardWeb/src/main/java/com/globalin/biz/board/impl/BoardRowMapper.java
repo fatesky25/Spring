@@ -20,6 +20,7 @@ public class BoardRowMapper implements RowMapper<BoardVO> {
 		board.setContent(rs.getString("content"));
 		board.setRegDate(rs.getDate("regdate"));
 		board.setCnt(rs.getInt("cnt"));
+		
 		return board;
 	}
 

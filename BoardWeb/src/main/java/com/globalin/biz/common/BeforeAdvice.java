@@ -6,14 +6,15 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @Aspect
 public class BeforeAdvice {
-
+	
 	/*
 	@Pointcut("execution(* com.globalin.biz..*Impl.*(..))")
-	public void allPointcut() {	}
+	public void allPointcut() {
+		
+	}
 	
 	@Before("allPointcut()")
 	*/
@@ -22,12 +23,12 @@ public class BeforeAdvice {
 	public void beforeLog(JoinPoint jp) {
 		
 		String method = jp.getSignature().getName();
-		Object[] args = jp.getArgs();
+		Object[] args = jp.getArgs();	// ì¸ìì˜ ëª©ë¡ì„ ê°€ì ¸ì˜´
 		
+	
 		
-	/*	
-		System.out.println("[»çÀü Ã³¸®] "+method
-				+"() ¸Ş¼Òµå ARGSÁ¤º¸:"+args[0].toString());
-	*/
+	//	System.out.println("[ì‚¬ì „ ì²˜ë¦¬] "+method+ "() ë©”ì†Œë“œ ARGSì •ë³´ : "+ args[0].toString());
+		
 	}
+	
 }

@@ -8,32 +8,31 @@ import org.springframework.stereotype.Service;
 
 import com.globalin.biz.user.UserVO;
 
-
-
 @Service
 @Aspect
 public class AfterReturningAdvice {
-/*
+
+	/*
 	@Pointcut("execution(* com.globalin.biz..*Impl.get*(..))")
-    public void getPointcut() {
+	public void getPointcut() {
 		
-	}	
-//	@AfterReturning(pointcut = "getPointcut()", returning = "returnObj")
+	}
+	
+	
+	@AfterReturning(pointcut="getPointcut()", returning = "returnObj")
 	*/
 	
-	@AfterReturning(pointcut = "PointcutCommon.getPointcut()", returning = "returnObj")
+	@AfterReturning(pointcut="PointcutCommon.getPointcut()", returning="returnObj")
 	public void afterLog(JoinPoint jp, Object returnObj) {
 		
 		String method = jp.getSignature().getName();
 		if(returnObj instanceof UserVO) {
 			UserVO user = (UserVO)returnObj;
 			if(user.getRole().equals("Admin")) {
-				System.out.println(user.getName()+"·Î±×ÀÎ(Admin)");
+				System.out.println(user.getName()+"ë¡œê·¸ì¸(Admin)");
 			}
 		}
 		
-		System.out.println("[»çÈÄ Ã³¸®] "+method+"() ¸Ş¼Òµå ¸®ÅÏ°ª:"+returnObj.toString());
+		System.out.println("[ì‚¬í›„ ì²˜ë¦¬] "+ method +"() ë©”ì†Œë“œ ë¦¬í„´ê°’ : " + returnObj.toString() );
 	}
-	
-	
 }
