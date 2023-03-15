@@ -16,7 +16,7 @@ import com.globalin.biz.board.BoardVO;
 // 첫번째 방법 : JdbcDaoSupport 클래스를 상속받아 활용
 // 두번째 방법 : bean을 이용해 의존성 주입하여 구현
 // DAO(Data Access Object)
-@Repository("boardDAO")
+@Repository
 //public class BoardDAOSpring extends JdbcDaoSupport {
 	
 	public class BoardDAOSpring {

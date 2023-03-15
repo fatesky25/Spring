@@ -107,7 +107,16 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.2.8</version>
+</dependency>
+			
 
+	
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -134,6 +143,14 @@
     		<artifactId>spring-jdbc</artifactId>
     		<version>4.2.4.RELEASE</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis-spring</artifactId>
+    <version>1.2.2</version>
+</dependency>
+		
 		
 
 		<!-- Servlet -->

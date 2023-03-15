@@ -9,7 +9,7 @@ import com.globalin.biz.board.BoardVO;
 import com.globalin.biz.common.JDBCUtil;
 
 // DAO(Data Access Object)
-//@Repository("boardDAO")
+@Repository("boardDAO")
 public class BoardDAO {
 	
 	// JDBC 관련 변수 선언

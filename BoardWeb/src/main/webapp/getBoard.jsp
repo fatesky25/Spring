@@ -25,9 +25,7 @@
 		
 		<tr>
 			<td bgcolor="orange">작성자</td>
-			<td align="left">
-				<input type="text" name="writer" value="${board.writer }">
-			</td>
+			<td align="left">${board.writer }"></td>
 		</tr>
 		
 		<tr>
