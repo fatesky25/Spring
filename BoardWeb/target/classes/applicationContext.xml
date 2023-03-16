@@ -16,6 +16,7 @@
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
 	<!--<bean class="polymorphism.AppleSpeaker"></bean>-->
+	
 	<!-- 
 	<bean id="log" class="com.globalin.biz.common.LogAdvice"></bean>
 	<aop:config>
@@ -23,8 +24,7 @@
 		<aop:aspect ref="log">
 			<aop:before method="printLog" pointcut-ref="allPointcut"/>
 		</aop:aspect>
-	</aop:config>
-	-->
+	</aop:config> -->
 	
 	<!-- 
 	<bean id="log" class="com.globalin.biz.common.Log4jAdvice"></bean>
@@ -181,9 +181,5 @@
 	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
 	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
 -->
-
-
-
-
 
 </beans>

@@ -28,6 +28,8 @@ import com.globalin.biz.board.BoardVO;
 	private final String BOARD_DELETE="delete from board where seq=?";
 	private final String BOARD_GET="select * from board where seq=?";
 	private final String BOARD_LIST="select * from board order by seq desc";
+	private final String BOARD_LIST_T="select * from board where title like '%'||?||'%' order by seq desc"; 
+	private final String BOARD_LIST_C="select * from board where content like '%'||?||'%' order by seq desc"; 
 	
 	
 	@Autowired
@@ -86,10 +88,21 @@ import com.globalin.biz.board.BoardVO;
 	}
 	
 	// 글 목록조회
-	public List<BoardVO> getBoardList() {
+	public List<BoardVO> getBoardList(BoardVO vo) {
 		
 		System.out.println("====> JDBC로 getBoardList() 기능 처리.");	
 		
-		return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
+		Object[] args = {vo.getSearchKeyword()};
+		
+		if(vo.getSearchCondition().equals("TITLE")) {
+			return jdbcTemplate.query(BOARD_LIST_T, args, new BoardRowMapper());
+		}else if(vo.getSearchCondition().equals("CONTENT")) {
+			return jdbcTemplate.query(BOARD_LIST_C, args, new BoardRowMapper());
+		}
+		
+		return null;
+		// return getJdbcTemplate().query(BOARD_LIST new BoardRowMapper());
+		// return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
+		// query :  select 문의 실행결과가 목록일때
 	}
 }

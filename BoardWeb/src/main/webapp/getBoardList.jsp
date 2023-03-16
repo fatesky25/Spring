@@ -12,19 +12,19 @@
 <div align="center">
 <h1>글 목록</h1>
 	<h3>
-	${userName}님 환영합니다..... <a href="logout.do">Log-out</a>
+	${userName } 님 환영합니다..... <a href="logout.do">Log-out</a>
 	</h3>
-	<!-- 검색 시작 -->
+	
 	<form action="getBoardList.do" method="post">
 		<table border="1" cellpadding="0" cellspacing="0" width="700">
 			<tr>
 				<td align="right">
 					<select name="searchCondition">
-					<c:forEach var="option" items="${conditionMap}">
-						<option value="${option.value}">${option.key}</option>
-					</c:forEach>
+						<c:forEach var="option" items="${conditionMap }">
+							<option value="${option.value }">${option.key }</option>
+						</c:forEach>
 					</select>
-					<input type="text" name="searchKeyword">
+					<input name="searchKeyword" type="text">
 					<input type="submit" value="검색"> 
 				</td>
 			</tr>

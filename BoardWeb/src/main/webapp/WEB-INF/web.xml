@@ -16,7 +16,7 @@
 	<filter-name>characterEncoding</filter-name>
 	<url-pattern>*.do</url-pattern>
 </filter-mapping>
-
+	
 <servlet>
 	<servlet-name>action</servlet-name>
 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -26,13 +26,9 @@
 		<param-value>/WEB-INF/config/presentation-layer.xml</param-value>
 	</init-param>
 </servlet>
-<servlet-class>com.globalin.view.controller.DispatcherServlet</servlet-class> 
-<servlet-mapping>
-	<servlet-name>action</servlet-name>
-	<url-pattern>*.do</url-pattern>
-</servlet-mapping>
 
 <!-- needed for ContextLoaderListener -->
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
@@ -42,5 +38,11 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
+<servlet-class>com.globalin.view.controller.DispatcherServlet</servlet-class>
+<servlet-mapping>
+	<servlet-name>action</servlet-name>
+	<url-pattern>*.do</url-pattern>
+</servlet-mapping>
 
 </web-app>
