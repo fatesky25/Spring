@@ -6,17 +6,21 @@ import org.springframework.stereotype.Component;
 public class AppleSpeaker implements Speaker {
 
 	public AppleSpeaker() {
-		System.out.println("===> AppleSpeaker ê°ì²´ ìƒì„± .....");
+		// TODO Auto-generated constructor stub
+		System.out.println("====> AppleSpeaker °´Ã¼ »ý¼º....");
 	}
 	
 	@Override
 	public void volumeUp() {
-		System.out.println("AppleSpeaker ----- ì†Œë¦¬ ì˜¬ë¦°ë‹¤.");
+		// TODO Auto-generated method stub
+         System.out.println("AppleSpeaker --- ¼Ò¸® ¿Ã¸°´Ù.");
 	}
 
 	@Override
 	public void volumeDown() {
-		System.out.println("AppleSpeaker ----- ì†Œë¦¬ ë‚´ë¦°ë‹¤.");
+		// TODO Auto-generated method stub
+		System.out.println("AppleSpeaker ---- ¼Ò¸® ³»¸°´Ù.");
+
 	}
 
 }

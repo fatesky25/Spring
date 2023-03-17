@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.globalin.biz">
+	<logger name="com.global.biz">
 		<level value="info" />
 	</logger>
 	

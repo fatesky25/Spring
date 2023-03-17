@@ -3,18 +3,19 @@ package polymorphism;
 import org.springframework.stereotype.Component;
 
 //@Component("sony")
-public class SonySpeaker implements Speaker {
+public class SonySpeaker implements Speaker{
 
 	public SonySpeaker() {
-		
-		System.out.println("====> SonySpeaker ê°ì²´ ìƒì„±...");
+	    System.out.println("====>  SonySpeaker °´Ã¼ »ý¼º.....");
 	}
 	
 	public void volumeUp() {
-		System.out.println("SonySpeaker --- ì†Œë¦¬ ì˜¬ë¦°ë‹¤.");
+		System.out.println("SonySpeaker -- ¼Ò¸® ¿Ã¸°´Ù.");
 	}
 	
 	public void volumeDown() {
-		System.out.println("SonySpeaker --- ì†Œë¦¬ ë‚´ë¦°ë‹¤.");
+		System.out.println("SonySpeaker -- ¼Ò¸® ³»¸°´Ù.");
 	}
+	
+	
 }

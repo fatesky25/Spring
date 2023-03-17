@@ -1,66 +1,77 @@
 package polymorphism;
 
+/*
+ *   °áÇÕµµ : ÇÏ³ªÀÇ Å¬·¡½º°¡ ´Ù¸¥ Å¬·¡½º¿Í ¾ó¸¶³ª ¸¹ÀÌ ¿¬°áµÇ¾î ÀÖ´ÂÁö ³ªÅ¸³»´Â ÀÇ¹ÌÀÓ
+ *    
+ *              °áÇÕµµ°¡ ³ôÀº ÇÁ·Î±×·¥Àº À¯Áö º¸¼ö°¡ ¾î·Æ´Ù.
+ *    
+ */
+ 
+public class SamsungTV implements TV{
 
-public class SamsungTV implements TV {
-	
 	private Speaker speaker;
 	private int price;
 	
-	public void setSpeaker(Speaker speaker) {
-		System.out.println("===> setSpeaker() í˜¸ì¶œ");
-		this.speaker = speaker;
-	}
-
-	public void setPrice(int price) {
-		System.out.println("===> setPrice() í˜¸ì¶œ");
-		this.price = price;
-	}
-	
+	/*
 	public void initMethod() {
-		System.out.println("ê°ì²´ ì´ˆê¸°í™” ì‘ì—…ì²˜ë¦¬ì¤‘ ......");
+		System.out.println("°´Ã¼ ÃÊ±âÈ­ ÀÛ¾÷ Ã³¸® ..............");
 	}
 	
 	public void destroyMethod() {
-		System.out.println("ê°ì²´ ì‚­ì œ ì „ì— ì²˜ë¦¬í•  ë¡œì§ ì²˜ë¦¬ì¤‘ ......");
+		System.out.println("°´Ã¼ »èÁ¦ Àü¿¡ Ã³¸®ÇÒ ·ÎÁ÷ Ã³¸® ..............");
 	}
 	
-	public SamsungTV() {
-		System.out.println("====> SamsungTV(1) ê°ì²´ ìƒì„±");
-	}
 	
+	public SamsungTV(Speaker speaker) {
+		   System.out.println("=====> SamsungTV(2) °´Ã¼ »ı¼º  ");
+		   this.speaker=speaker;
+	}
 	
 	public SamsungTV(Speaker speaker, int price) {
-		System.out.println("====> SamsungTV(3) ê°ì²´ ìƒì„±");
+		   System.out.println("=====> SamsungTV(3) °´Ã¼ »ı¼º  ");
+		   this.speaker=speaker;
+		   this.price=price;
+	}
+	*/
+	
+	
+	
+	public SamsungTV() {
+		   System.out.println("=====> SamsungTV(1) °´Ã¼ »ı¼º  ");
+	}
+		
+	
+	public void setSpeaker(Speaker speaker) {
+		System.out.println("setSpeaker() È£Ãâ......");
 		this.speaker = speaker;
+	}
+
+
+	public void setPrice(int price) {
+		System.out.println("setPrice() È£Ãâ......");
 		this.price = price;
 	}
 
-	public SamsungTV(Speaker speaker) {
-		System.out.println("====> SamsungTV(2) ê°ì²´ ìƒì„±");
-		this.speaker = speaker;
-	}
-	
+
 	public void powerOn() {
-		System.out.println("SamsungTV --- ì „ì› ì¼ ë‹¤. (ê°€ê²© : " + price+ ")");
+		System.out.println("SamsungTV----Àü¿ø ÄÒ´Ù. (°¡°İ : "+price+")");
 	}
 	
 	public void powerOff() {
-		System.out.println("SamsungTV --- ì „ì› ëˆë‹¤.");
+		System.out.println("SamsungTV----Àü¿ø ²ö´Ù.");
 	}
 	
 	public void volumeUp() {
-	//	speaker = new Speaker();
+		//speaker = new AppleSpeaker();
 		speaker.volumeUp();
-	//	System.out.println("SamsungTV --- ì†Œë¦¬ ì˜¬ë¦°ë‹¤.");
+		//System.out.println("SamsungTV----¼Ò¸® ¿Ã¸°´Ù.");
 	}
 	
 	public void volumeDown() {
-	//	speaker = new SonySpeaker();
+		//speaker = new AppleSpeaker();
 		speaker.volumeDown();
-	//	System.out.println("SamsungTV --- ì†Œë¦¬ ë‚´ë¦°ë‹¤.");
+		//System.out.println("SamsungTV----¼Ò¸® ³»¸°´Ù.");
 	}
-	
-	
 	
 	
 }
